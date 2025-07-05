@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.github a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+}
