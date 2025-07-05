@@ -6,6 +6,7 @@
   padding: 30px;
 }
 
+/* ---------- header ---------- */
 .header {
   display: flex;
   justify-content: space-between;
@@ -18,9 +19,77 @@
 
 .github a {
   font-weight: 500;
-  text-decoration: underline;
+  font-size: 1.1rem;
+  color: #006732;
 }
 
+/* ---------- main area ---------- */
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 80vh;
+  gap: 30px;
+  margin: 30px auto;
+}
+
+.formContainer,
+.responseContainer {
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.formContainer {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.responseContainer {
+  background-color: #f9fafb;
+  color: #000;
+}
+
+/* ---------- form ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form label {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.form select,
+.form textarea,
+.form button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form button {
+  background: #006732;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- footer ---------- */
 .footer {
   text-align: center;
 }
