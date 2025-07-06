@@ -17,6 +17,16 @@
   width: 100px;
 }
 
+.heroMessage {
+  text-align: center;
+}
+
+.heroMessage h1 {
+  width: 40%;
+  margin: 20px auto;
+  font-size: 3em;
+}
+
 .github a {
   font-weight: 500;
   font-size: 1.1rem;
@@ -120,4 +130,63 @@
 /* ---------- footer ---------- */
 .footer {
   text-align: center;
+}
+
+/* ---------- Responsive: Tablet ---------- */
+@media screen and (max-width: 1024px) {
+  .mainContainer {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .formContainer,
+  .responseContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  .heroMessage h1 {
+    width: 90%;
+    font-size: 2.2em;
+  }
+}
+
+/* ---------- Responsive: Mobile ---------- */
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 20px;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  .heroMessage h1 {
+    font-size: 1.7em;
+  }
+
+  .github a {
+    font-size: 1rem;
+  }
+
+  .mainContainer {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .form select,
+  .form textarea,
+  .form button {
+    font-size: 1rem;
+  }
+
+  .formContainer,
+  .responseContainer {
+    padding: 15px;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+  }
 }

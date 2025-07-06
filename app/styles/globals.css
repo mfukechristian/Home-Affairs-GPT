@@ -26,3 +26,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* basic markdown spacing */
+h1 {
+  color: #006732;
+  font-weight: 500;
+}

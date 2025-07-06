@@ -10,8 +10,6 @@ import {
 } from "@langchain/core/runnables";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import type { Document } from "@langchain/core/documents";
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-import { MistralAIEmbeddings } from "@langchain/mistralai";
 import { z } from "zod";
 
 const llm = new ChatMistralAI({

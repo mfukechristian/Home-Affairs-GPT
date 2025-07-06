@@ -14,11 +14,15 @@ const serviceOptions: Record<"immigration" | "civic", Option[]> = {
     { value: "study visa", label: "Study visa" },
     { value: "work visa", label: "Work visa" },
     { value: "spousal visa", label: "Spousal visa" },
+    { value: "refugee", label: "Refugee" },
+    { value: "Permenanet residence", label: "Refugee" },
   ],
   civic: [
     { value: "birth certificate", label: "Birth certificate" },
     { value: "id card", label: "ID card" },
-    { value: "marriage certificate", label: "Marriage certificate" },
+    { value: "marriage certificate", label: "Marriage Certificate" },
+    { value: "adoption", label: "Adoption Certificate" },
+    { value: "passport", label: " Passport" },
   ],
 };
 
@@ -76,7 +80,10 @@ const Main = () => {
           </a>
         </div>
       </header>
-
+      <div className={styles.heroMessage}>
+        <p>Your Home Affairs Civic and Immigration services, Simplified.</p>
+        <h1>Get the information you need, right at your fingertips.</h1>
+      </div>
       {/* ----- main area ----- */}
       <div className={styles.mainContainer}>
         {/* ---- form ---- */}
