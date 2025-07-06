@@ -1,6 +1,7 @@
 "use client";
 
 import React, { FormEvent, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import styles from "../styles/main.module.css";
 
 interface Option {
@@ -30,6 +31,9 @@ const Main = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    // Show placeholder + disable button
+    setAnswer("⏳ Your result will appear here in about 2 min…");
     setLoading(true);
 
     try {
@@ -39,7 +43,16 @@ const Main = () => {
         body: JSON.stringify({ service, subService, query }),
       });
       const data = await res.json();
-      setAnswer(data.data || "No reply 🤷‍♂️");
+
+      if (res.ok) {
+        setAnswer(data.data || "No reply 🤷‍♂️");
+        // clear the form
+        setService("");
+        setSubService("");
+        setQuery("");
+      } else {
+        setAnswer(data.error || "Something went wrong.");
+      }
     } catch {
       setAnswer("Something went wrong.");
     } finally {
@@ -47,12 +60,12 @@ const Main = () => {
     }
   };
 
-  const currentSubs = service
-    ? serviceOptions[service as "immigration" | "civic"]
-    : [];
+  const currentSubs =
+    service === "" ? [] : serviceOptions[service as "immigration" | "civic"];
 
   return (
     <div className={styles.main}>
+      {/* ----- header ----- */}
       <header className={styles.header}>
         <div className={styles.logo}>
           <img src="/logo.png" alt="logo" />
@@ -64,7 +77,9 @@ const Main = () => {
         </div>
       </header>
 
+      {/* ----- main area ----- */}
       <div className={styles.mainContainer}>
+        {/* ---- form ---- */}
         <div className={styles.formContainer}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <label>
@@ -116,11 +131,16 @@ const Main = () => {
           </form>
         </div>
 
+        {/* ---- response panel ---- */}
         <div className={styles.responseContainer}>
-          {answer || "See your request results here"}
+          {/* Render markdown safely */}
+          <ReactMarkdown>
+            {answer || "See your request results here"}
+          </ReactMarkdown>
         </div>
       </div>
 
+      {/* ----- footer ----- */}
       <footer className={styles.footer}>
         <p>
           <a

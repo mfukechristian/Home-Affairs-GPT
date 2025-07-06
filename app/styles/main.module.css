@@ -61,6 +61,7 @@
   font-weight: 500;
   display: flex;
   flex-direction: column;
+  color: #006732;
 }
 
 .form select,
@@ -73,6 +74,7 @@
 }
 
 .form textarea {
+  font-family: "Roboto", sans-serif;
   min-height: 120px;
   resize: vertical;
 }
@@ -87,6 +89,32 @@
 .form button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* --- response area tweaks --- */
+.responseContainer {
+  background: #f9fafb;
+  color: #000;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* basic markdown spacing */
+.responseContainer h1,
+.responseContainer h2,
+.responseContainer h3 {
+  color: #006732;
+  font-weight: 500;
+}
+.responseContainer ul,
+.responseContainer ol {
+  list-style: none;
+}
+
+.responseContainer strong {
+  color: #006732;
 }
 
 /* ---------- footer ---------- */
