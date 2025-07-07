@@ -1,6 +1,6 @@
 # Home Affairs GPT
 
-## Overview
+https://github.com/user-attachments/assets/6073f71a-3278-485c-83f2-34d5c7b0de33
 
 Home Affairs GPT is a web application designed to simplify access to information regarding South African civic and immigration services. Users can ask specific questions related to these services through a user-friendly form, and the application leverages AI to provide clear and understandable answers based on web research.
 
